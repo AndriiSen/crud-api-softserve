@@ -16,6 +16,9 @@ const options = {
         servers: [ 
             {
                 url: "http://localhost:3001"
+            },
+            {
+                url: "http://54.164.21.145:3001"
             }
         ]
     },
