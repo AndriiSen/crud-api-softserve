@@ -34,7 +34,7 @@ app.use(cors());
 app.use('/user', users)
 
 
-app.listen(3001, () => {
+app.listen(80, () => {
     console.log('Server running on port 3001...')
 });
 
