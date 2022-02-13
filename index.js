@@ -16,6 +16,9 @@ const options = {
         servers: [ 
             {
                 url: "http://localhost:3001"
+            },
+            {
+                url: "http://54.164.21.145:3001"
             }
         ]
     },
@@ -31,7 +34,7 @@ app.use(cors());
 app.use('/user', users)
 
 
-app.listen(3001, () => {
+app.listen(80, () => {
     console.log('Server running on port 3001...')
 });
 
