@@ -111,7 +111,7 @@ router
         try {
             await user.save()
             res.status(200)
-            res.send(user)
+            res.send(await getAll())
         } catch(err) {
             console.log(err)
         }
@@ -179,7 +179,7 @@ router
         const id = req.params.id
         const updateInfo = req.body
         await findOneAndUpdate({id: id}, updateInfo)
-        res.status(200).send(update)
+        res.status(200).send(await getAll())
     })
 /**
  * @swagger
@@ -206,7 +206,7 @@ router
     .delete(async (req, res) => {
         const id = req.params.id
         await findOneAndDelete({id: id})
-        res.send('Successfully deleted')
+        res.status(200).send(await getAll())
     })
 
 module.exports = router;
