@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const users = require('./routes/users');
+const iPaddress = require('./helpers/getIpForSwagger')
 
 const swaggerUI = require('swagger-ui-express')
 const swaggerJsDoc = require('swagger-jsdoc')
@@ -15,10 +16,10 @@ const options = {
         },
         servers: [ 
             {
-                url: "http://localhost:3001"
+                url: "http://localhost:80"
             },
             {
-                url: "http://54.164.21.145:3001"
+                url: `http://${iPaddress}:80`
             }
         ]
     },
@@ -38,3 +39,4 @@ app.listen(80, () => {
     console.log('Server running on port 3001...')
 });
 
+console.log(iPaddress)
