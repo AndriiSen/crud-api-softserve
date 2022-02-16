@@ -17,9 +17,6 @@ const options = {
       {
         url: "http://localhost:80",
       },
-      {
-        url: `http://${process.env.API_URL}`,
-      },
     ],
   },
   apis: ["./routes/*.js"],
@@ -32,7 +29,7 @@ app.use(cors());
 
 app.use("/user", users);
 
-const port = process.env.port || 3000;
+const port = 3000;
 app.listen(port, () => {
   console.log("Server running");
 });
