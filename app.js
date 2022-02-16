@@ -29,7 +29,6 @@ app.use(cors());
 
 app.use("/user", users);
 
-const port = 3000;
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server running");
 });
